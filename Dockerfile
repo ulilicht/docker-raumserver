@@ -17,8 +17,8 @@ RUN set -x \
       && rm -rf /var/lib/apt/lists/*
 
 RUN set -x \
-      && wget -q --no-check-certificate $raumserver_release/raumserverDaemon_linux_X64.zip \
-      && unzip raumserverDaemon_linux_X64.zip -d raumserver && rm -f raumserverDaemon_linux_X64.zip \
+      && wget -q --no-check-certificate $raumserver_release/raumserverDaemon_linux_ARMV7HF.zip \
+      && unzip raumserverDaemon_linux_ARMV7HF.zip -d raumserver && rm -f raumserverDaemon_linux_ARMV7HF.zip \
       && mv raumserver/settings.xml raumserver/settings.xml.dist \
       && sed -i "s%RAUMSERVER_HTTP%"$raumserver_http"%" settings.xml \
       && mv settings.xml raumserver/ \
